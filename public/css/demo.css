@@ -1,0 +1,315 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Abel', sans-serif;
+	color: #fff;
+	background: #000;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #fff;
+}
+
+.fixed{
+	position: fixed;
+}
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+/* Overlay */
+main::before {
+	content: '';
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	background: rgba(0,0,0,0.4);
+}
+
+main {
+	background: rgba(0, 0, 0, 0.66);
+}
+
+.left-intro{
+	margin-top: 3em;
+	margin-left: 3em;
+}
+.left-intro p{
+	width: 370px;
+	font-size: 20px;
+	margin-top: 0;
+	margin-left: 13px;
+}
+
+.logo{
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	background: url('/img/seagull.png') no-repeat top left;
+	background-size: 90%;
+	font-size: 0;
+}
+.logo-title{
+	margin: 0;
+	font-size: 25px;
+	line-height: 89px;
+	font-weight: normal;
+}
+
+
+/* Page Loader */
+
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1001;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	margin: -25px 0 0 -25px;
+	pointer-events: none;
+	border-radius: 50%;
+	background: #3b3b3b;
+	animation: loaderAnim 0.8s ease-out infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	to {
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 100vh;
+}
+
+.content--main {
+	min-height: 80vh;
+}
+
+.content--main::before,
+.content--main::after {
+	position: fixed;
+	left: 50%;
+}
+
+.content--main::before {
+	content: '';
+	bottom: 3em;
+	height: 1.5em;
+	width: 1px;
+	background: #fff;
+}
+
+.content--main::after {
+	content: 'Scroll';
+	position: fixed;
+	bottom: 0;
+	width: 6em;
+	text-align: center;
+	margin: 0 0 1.5em -3em;
+	font-size: 0.75em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-indent: 2px;
+}
+
+.content--header {
+	position: relative;
+	z-index: 11;
+	align-items: flex-start;
+	width: 100%;
+	padding: 1.5em;
+}
+
+.content__top {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+}
+
+.main-title {
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+.main-tagline {
+	font-size: 0.865em;
+	margin: 0 1em;
+	opacity: 0.8;
+}
+
+.main-tagline::before,
+.main-tagline::after {
+	content: ' // ';
+}
+
+.github {
+	font-size: 0.865em;
+}
+
+/* Top Navigation Style */
+
+.codrops-links {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin: 0 0 0 auto;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.codrops-icon {
+	display: inline-block;
+	margin: 0.25em;
+	padding: 0.5em;
+}
+
+/* Demo links */
+
+.demos {
+	position: fixed;
+	top: 6em;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0 1.25em;
+}
+
+.demo {
+	font-size: 0.865em;
+	position: relative;
+	margin: 0 1em 0.5em 0;
+	padding: 0 0 0.25em 0.25em;
+	white-space: nowrap;
+}
+
+.demo:hover,
+.demo--current {
+	text-decoration: underline;
+}
+
+/* Related demos */
+
+.content--related {
+	position: relative;
+	z-index: 10;
+	justify-content: center;
+	padding: 1em;
+	text-align: center;
+	background: #000;
+	align-content: center;
+  min-height: 5vh;
+}
+
+.content--related a,
+.github {
+	text-decoration: underline;
+}
+
+.content--related a:hover,
+.content--related a:focus,
+.github:hover,
+.github:focus {
+	text-decoration: none;
+}
+
+.content__text {
+	font-size: 0.865em;
+	font-weight: normal;
+	width: 100%;
+	margin: 0 0 1em 0;
+}
+
+.content__text:first-child {
+	margin: 0 0 5em 0;
+}
+
+.media-item {
+	display: inline-block;
+	padding: 1em;
+	vertical-align: top;
+	transition: color 0.3s;
+}
+
+.media-item__img {
+	max-width: 100%;
+	opacity: 0.6;
+	transition: opacity 0.3s;
+}
+
+.media-item:hover .media-item__img,
+.media-item:focus .media-item__img {
+	opacity: 1;
+}
+
+.media-item__title {
+	font-size: 0.865em;
+	font-weight: normal;
+	max-width: 200px;
+	margin: 0;
+	padding: 0.5em;
+}
+
+#webgl {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100vw;
+	height: 100vh;
+}
+
+
+.demo-8 {
+	background: #000;
+}
+.demo-8 main::before {
+	background: rgba(84, 115, 243, 0.3);
+}
+.demo-8 .content--related {
+	background: #232121;
+}
+
+@media screen and (max-width: 40em) {
+
+}
