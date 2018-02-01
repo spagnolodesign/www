@@ -311,5 +311,26 @@ main {
 }
 
 @media screen and (max-width: 40em) {
+	.logo {
+    width: 70px;
+    height: 80px;
+    display: block;
+    background-size: 100%;
+    margin: 1em auto;
+	}
 
+	.logo-title {
+    line-height: 67px;
+    text-align: center;
+	}
+
+	.left-intro {
+    margin: 1em;
+	}
+	.left-intro p {
+    width: auto;
+    font-size: 20px;
+    margin-top: 0;
+    margin-left: 0;
+	}
 }
