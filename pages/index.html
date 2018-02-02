@@ -19,18 +19,16 @@
 <body class="demo-8 loading">
   <canvas id="webgl"></canvas>
 	<main>
-		<section class="content fixed">
+		<section class="content">
       <div class="left-intro">
-        <h1 class="logo-title"><a class="logo" href="">CodeGull</a> Welcome on CodeGull!</h1>
-        <p>I’m Luca Spagnolo, teacher and maker.<br>I live as nomad by discovering remote places and meet awesome people. Is my philosophy in life and is what keep me creative and motivate to learn.<br>The aim of CodeGull is to inspire people, create and share everything I do and who I am.<br><br>Currently in Bali, Indonesia. </p>
+        <h1 class="logo-title fooReveal"><a class="logo" href="">CodeGull</a> Welcome to CodeGull</h1>
+        <p class="fooReveal">I’m Luca Spagnolo, teacher and maker.<br>I live as nomad by discovering remote places and meet awesome people. Is my philosophy in life and is what keep me creative and motivate to learn.<br>The aim of CodeGull is to inspire people, create and share everything I do and who I am.<br><br>Currently in Bali, Indonesia. </p>
       </div>
     </section>
 		<section class="content"></section>
 		<section class="content"></section>
 		<section class="content"></section>
-		<section class="content content--related">
-			HELLO
-		</section>
+		<section class="content content--related">HELLO</section>
 	</main>
 	<script src="js/regl.min.js"></script>
 	<script type="x-shader/x-fragment" id="fragmentShader">
@@ -137,5 +135,13 @@
 	}
 	</script>
 	<script src="js/demo8.js"></script>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script>
+		// Changing the defaults
+		window.sr = ScrollReveal({ reset: true });
+
+		sr.reveal('.fooReveal', { duration: 1000, reset: true, delay: 900, distance: `${window.innerHeight/2}px` }, 30);
+		// sr.reveal('.fooReveal', { reset: false, container: '.fooContainer', rotate: {x: 65} });
+	</script>
 </body>
 </html>

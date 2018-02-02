@@ -67,13 +67,27 @@ main {
 	background: url('/img/seagull.png') no-repeat top left;
 	background-size: 90%;
 	font-size: 0;
+	margin-left: 15px;
 }
 .logo-title{
 	margin: 0;
 	font-size: 25px;
-	line-height: 89px;
+	line-height: 73px;
 	font-weight: normal;
 }
+
+.box{
+	width: 10px;
+	height: 10px;
+	background-color: red;
+	display: inline-block;
+	margin: 1em;
+}
+/* Ensure elements load hidden before ScrollReveal runs */
+.sr .fooReveal { visibility: hidden; }
+
+/* add perspective to your container */
+/* .fooContainer { perspective: 800px; min-height: 100vh;} */
 
 
 /* Page Loader */
